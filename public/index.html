@@ -2,7 +2,61 @@
 <html>
   <head>
     <title>Done Crypto - an encrypted database example</title>
+    <link href="assets/application.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
   </head>
   <body>
+    <div class="container">
+      <div class="hero-unit" id="create-account">
+        <h2>Create account</h2>
+        <input id="password" type="text" class="span3" placeholder="password"><br>
+        <button type="button" onclick="createAccount()" class="btn btn-info btn-large">Create</button>
+        <span id="checkAccount" class="alert alert-error hidden">Please enter a password</span>
+      </div>
+      <div class="hero-unit">
+        <h2>Personal Information</h2>
+        <h3>ID</h3>
+        <input id="id" type="text" value="Loading..">
+        <h3>Private key</h3>
+        <textarea id="private_key">Loading..</textarea>
+        <h3>Public key</h3>
+        <textarea id="public_key">Loading..</textarea>
+        <h2>Message</h2>
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Body</th>
+              <th>Encrypted</th>
+              <th>Key</th><th>IV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan=4>
+                Loading..
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="button" onclick="refresh()" class="btn btn-info btn-medium">Refresh</button>
+        <h2>Send message</h2>
+        <h3>Body</h3>
+        <textarea id="body" placeholder="A nice greeting"></textarea><br>
+        <input id="key" type="text" placeholder="key"><br>
+        <input id="iv" type="text" placeholder="iv"><br>
+        <button type="button" onclick="encrypt()" class="btn btn-info btn-large">Encrypt</button>
+        <button type="button" onclick="send()" class="btn btn-info btn-large">Send</button>
+      </div>
+    </div>
+    <script src="assets/application.js"></script>
   </body>
 </html>
