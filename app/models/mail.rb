@@ -1,6 +1,7 @@
 class Mail < ActiveRecord::Base
   attr_accessible :body
   belongs_to :user
+  serialize :body
 
   def self.process(user, mail)
     # remove unwanted/incorrect lines and whitespace
@@ -12,7 +13,7 @@ class Mail < ActiveRecord::Base
 
   def self.receive_mail(user, mail)
     body = process user,mail
-    mail = Mail.new :body => user.encrypt_file(body)
+    mail = Mail.new :body => user.encrypt(body)
     mail.user = user
     mail.save
   end
