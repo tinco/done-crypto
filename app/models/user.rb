@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :public_key
+  attr_accessible :private_key
 
   has_many :mails
 

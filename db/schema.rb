@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120623121446) do
+ActiveRecord::Schema.define(:version => 20120623134613) do
 
   create_table "mails", :force => true do |t|
     t.integer  "user_id"
@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(:version => 20120623121446) do
 
   create_table "users", :force => true do |t|
     t.string   "public_key"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "private_key"
   end
 
 end
