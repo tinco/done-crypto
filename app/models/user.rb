@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   attr_accessible :public_key
   attr_accessible :private_key
 
+  serialize :public_key
+  serialize :private_key
+
   has_many :mails
 
   def encrypt(data)
